@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pankaj Thakur | AI Engineer Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -10,319 +11,291 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-:root{
-    --bg:#050816;
-    --card:rgba(255,255,255,.05);
-    --primary:#00F5FF;
-    --secondary:#8B5CF6;
-    --text:#ffffff;
-    --gray:#B8C1EC;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#050816;
+--card:rgba(255,255,255,.06);
+--primary:#00F5FF;
+--secondary:#8B5CF6;
+--text:#ffffff;
+--gray:#B8C1EC;
 }
 
 body{
-    background:linear-gradient(135deg,#050816,#0f172a,#111827);
-    color:var(--text);
-    overflow-x:hidden;
+background:#050816;
+color:var(--text);
+overflow-x:hidden;
 }
 
-body::before{
-    content:'';
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(0,245,255,.15),transparent 30%),
-    radial-gradient(circle at 80% 40%,rgba(139,92,246,.15),transparent 30%),
-    radial-gradient(circle at 50% 90%,rgba(0,245,255,.1),transparent 30%);
-    z-index:-1;
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+overflow:hidden;
+}
+
+.particles::before,
+.particles::after{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(150px);
+animation:float 10s infinite alternate;
+}
+
+.particles::before{
+background:#00f5ff30;
+top:-100px;
+left:-100px;
+}
+
+.particles::after{
+background:#8b5cf630;
+bottom:-100px;
+right:-100px;
+}
+
+@keyframes float{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(100px);
+}
 }
 
 .container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
+width:90%;
+max-width:1300px;
+margin:auto;
 }
 
 section{
-    padding:90px 0;
+padding:90px 0;
+animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .glass{
-    background:rgba(255,255,255,.05);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:25px;
+background:var(--card);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:25px;
 }
 
-/* HERO */
-
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
 .hero h1{
-    font-size:5rem;
-    font-weight:800;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    -webkit-background-clip:text;
-    color:transparent;
+font-size:5rem;
+font-weight:800;
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+-webkit-background-clip:text;
+color:transparent;
 }
 
 .hero h2{
-    margin-top:15px;
-    font-size:1.7rem;
-    color:var(--gray);
+margin-top:15px;
+font-size:1.8rem;
+color:var(--gray);
+min-height:50px;
+}
+
+.tagline{
+margin-top:15px;
+font-size:1.15rem;
+color:var(--primary);
 }
 
 .hero p{
-    max-width:850px;
-    margin:25px auto;
-    line-height:1.8;
-    font-size:1.1rem;
+margin-top:25px;
+line-height:1.9;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.hero-buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,#00F5FF,#8B5CF6);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+.btn:hover{
+transform:translateY(-3px);
 }
 
 .stats{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-    margin-top:40px;
+margin-top:50px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 }
 
 .stat{
-    width:220px;
-    padding:25px;
+width:220px;
+padding:25px;
 }
 
 .stat h3{
-    color:var(--primary);
-    font-size:2rem;
+color:var(--primary);
+font-size:2rem;
 }
 
 .section-title{
-    text-align:center;
-    font-size:2.7rem;
-    margin-bottom:60px;
-    color:var(--primary);
+text-align:center;
+font-size:2.8rem;
+margin-bottom:60px;
+color:var(--primary);
 }
-
-/* ABOUT */
 
 .about{
-    padding:40px;
-    line-height:2;
-    font-size:1.05rem;
+padding:40px;
+line-height:2;
 }
 
-/* SKILLS */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-.skill-card{
-    padding:25px;
+.card{
+padding:25px;
+transition:.4s;
 }
 
-.skill-card h3{
-    margin-bottom:15px;
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(0,245,255,.2);
 }
 
-.progress{
-    height:10px;
-    background:#222;
-    border-radius:50px;
-    overflow:hidden;
+.card h3{
+color:var(--primary);
+margin-bottom:15px;
 }
 
-.progress span{
-    display:block;
-    height:100%;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-}
-
-/* EXPERIENCE */
-
-.timeline{
-    position:relative;
-    max-width:900px;
-    margin:auto;
-}
-
-.timeline::before{
-    content:'';
-    position:absolute;
-    left:50%;
-    width:4px;
-    height:100%;
-    background:var(--primary);
-}
-
-.timeline-item{
-    width:50%;
-    padding:20px 40px;
-    position:relative;
-}
-
-.timeline-item:nth-child(odd){
-    left:0;
-}
-
-.timeline-item:nth-child(even){
-    left:50%;
-}
-
-.timeline-content{
-    padding:25px;
-}
-
-.timeline-content h3{
-    color:var(--primary);
-    margin-bottom:10px;
-}
-
-/* PROJECTS */
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.project-card{
-    padding:25px;
-    transition:.4s;
-}
-
-.project-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(0,245,255,.3);
-}
-
-.project-card h3{
-    margin-bottom:15px;
-    color:var(--primary);
-}
-
-.project-card p{
-    line-height:1.8;
+.card p{
+line-height:1.8;
 }
 
 .tags{
-    margin-top:20px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
 
 .tags span{
-    padding:8px 14px;
-    border-radius:50px;
-    background:rgba(0,245,255,.15);
-    color:var(--primary);
-    font-size:.85rem;
+padding:8px 14px;
+background:rgba(0,245,255,.15);
+border-radius:30px;
+color:var(--primary);
+font-size:.85rem;
 }
 
-/* TECH STACK */
+.experience{
+padding:35px;
+line-height:2;
+}
+
+.experience ul{
+padding-left:20px;
+}
 
 .tech-stack{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
 
 .tech-stack span{
-    padding:12px 20px;
-    border-radius:50px;
-    background:rgba(255,255,255,.08);
-    transition:.3s;
+padding:12px 20px;
+background:rgba(255,255,255,.08);
+border-radius:50px;
+transition:.3s;
 }
 
 .tech-stack span:hover{
-    background:var(--primary);
-    color:#000;
+background:var(--primary);
+color:black;
 }
-
-/* EDUCATION */
-
-.education-card{
-    padding:30px;
-    max-width:900px;
-    margin:auto;
-}
-
-.education-card table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-.education-card th,
-.education-card td{
-    padding:15px;
-    border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-/* CERTIFICATIONS */
-
-.cert-list{
-    display:grid;
-    gap:20px;
-}
-
-.cert-item{
-    padding:20px;
-}
-
-/* CONTACT */
 
 .contact{
-    text-align:center;
+padding:40px;
+text-align:center;
 }
 
 .contact a{
-    color:var(--primary);
-    text-decoration:none;
+color:var(--primary);
+text-decoration:none;
 }
 
 footer{
-    text-align:center;
-    padding:40px;
-    color:#aaa;
+padding:40px;
+text-align:center;
+color:#aaa;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-    font-size:3rem;
+font-size:3rem;
 }
 
-.timeline::before{
-    left:20px;
-}
-
-.timeline-item{
-    width:100%;
-    left:0 !important;
-    padding-left:60px;
+.hero h2{
+font-size:1.3rem;
 }
 
 }
@@ -332,18 +305,51 @@ footer{
 
 <body>
 
+<div class="particles"></div>
+
 <section class="hero">
+
 <div class="container">
 
 <h1>Pankaj Thakur</h1>
 
-<h2>AI Engineer • Generative AI Developer • AI Agent Builder</h2>
+<h2>
+<span id="typing"></span>
+</h2>
+
+<p class="tagline">
+Building AI Agents, RAG Systems, Workflow Automation &
+Generative AI Solutions
+</p>
 
 <p>
-Building Intelligent AI Agents, RAG Systems, Workflow Automation,
-Conversational AI Solutions and Generative AI Applications using
-OpenAI, CrewAI, Hugging Face, Python and Modern AI Technologies.
+Artificial Intelligence enthusiast with hands-on experience building
+AI-powered applications using Python, OpenAI SDK, CrewAI,
+Hugging Face, n8n and Gradio. Passionate about Generative AI,
+NLP, AI Agents, Conversational AI and Automation.
 </p>
+
+<div class="hero-buttons">
+
+<a href="Pankaj_Thakur_Resume.pdf"
+download
+class="btn btn-primary">
+Download Resume
+</a>
+
+<a href="https://github.com/PankajThakur0927"
+target="_blank"
+class="btn btn-secondary">
+GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/pankaj-thakur-a90991362"
+target="_blank"
+class="btn btn-secondary">
+LinkedIn
+</a>
+
+</div>
 
 <div class="stats">
 
@@ -359,165 +365,174 @@ OpenAI, CrewAI, Hugging Face, Python and Modern AI Technologies.
 
 <div class="stat glass">
 <h3>15+</h3>
-<p>AI Technologies</p>
+<p>Technologies</p>
 </div>
 
 </div>
 
 </div>
+
 </section>
 
 <section>
+
 <div class="container">
 
 <h2 class="section-title">About Me</h2>
 
 <div class="about glass">
-Artificial Intelligence enthusiast with hands-on experience developing AI-powered applications,
-workflow automation systems, conversational AI solutions, multi-agent systems and Retrieval
-Augmented Generation (RAG) applications. Experienced with Python, OpenAI SDK, CrewAI,
-Hugging Face, n8n, Gradio and modern LLM ecosystems. Passionate about Generative AI,
-Natural Language Processing, AI Agents and real-world AI automation.
+
+Artificial Intelligence enthusiast with experience developing AI-powered applications,
+multi-agent systems, conversational AI solutions, workflow automation platforms and
+RAG applications. Skilled in OpenAI SDK, CrewAI, Hugging Face, n8n, Gradio and Python.
+
 </div>
 
 </div>
+
 </section>
 
 <section>
+
 <div class="container">
 
-<h2 class="section-title">AI Skills</h2>
+<h2 class="section-title">Professional Experience</h2>
 
-<div class="skills-grid">
+<div class="experience glass">
 
-<div class="skill-card glass">
-<h3>Generative AI & LLMs</h3>
-<div class="progress"><span style="width:90%"></span></div>
-</div>
-
-<div class="skill-card glass">
-<h3>AI Agents (CrewAI)</h3>
-<div class="progress"><span style="width:92%"></span></div>
-</div>
-
-<div class="skill-card glass">
-<h3>RAG Systems</h3>
-<div class="progress"><span style="width:88%"></span></div>
-</div>
-
-<div class="skill-card glass">
-<h3>Workflow Automation (n8n)</h3>
-<div class="progress"><span style="width:95%"></span></div>
-</div>
-
-<div class="skill-card glass">
-<h3>Prompt Engineering</h3>
-<div class="progress"><span style="width:90%"></span></div>
-</div>
-
-<div class="skill-card glass">
-<h3>Python Development</h3>
-<div class="progress"><span style="width:92%"></span></div>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2 class="section-title">Experience</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<div class="timeline-content glass">
 <h3>AI Intern</h3>
-<h4>Indian Institute of Technology Jammu</h4>
+
+<p><strong>Indian Institute of Technology Jammu</strong></p>
+
 <p>
-Developed AI-powered applications using Python, OpenAI SDK, CrewAI, n8n and Gradio.
-Built conversational AI solutions, multi-agent systems and RAG-based applications.
-Integrated Gmail, Google Calendar, Airtable and external APIs for business automation.
+Duration: 8 Months
+(June 2025 – July 2025, January 2026 – June 2026)
 </p>
-</div>
-</div>
+
+<ul>
+
+<li>Developed AI-powered applications and automation workflows using Python, OpenAI SDK, CrewAI, n8n and Gradio.</li>
+
+<li>Built multi-agent systems, conversational AI solutions and chatbot interfaces using LLMs and AI Agents.</li>
+
+<li>Implemented RAG pipelines for document processing, information retrieval and question-answering applications.</li>
+
+<li>Integrated AI workflows with Gmail, Google Calendar, Airtable, webhooks and third-party APIs.</li>
+
+<li>Applied prompt engineering and utilized Hugging Face models for NLP and text generation.</li>
+
+<li>Participated in system design, implementation, testing, deployment and technical documentation.</li>
+
+</ul>
+
+<div class="tags">
+
+<span>Python</span>
+<span>OpenAI SDK</span>
+<span>CrewAI</span>
+<span>n8n</span>
+<span>Gradio</span>
+<span>Hugging Face</span>
+<span>GitHub</span>
+<span>RAG</span>
+<span>NLP</span>
+<span>REST APIs</span>
 
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 <section>
+
 <div class="container">
 
-<h2 class="section-title">Featured AI Projects</h2>
+<h2 class="section-title">Technical Skills</h2>
 
-<div class="projects">
+<div class="grid">
 
-<div class="project-card glass">
+<div class="card glass">
+<h3>Programming</h3>
+<p>Python, JavaScript, SQL, HTML5, CSS3</p>
+</div>
+
+<div class="card glass">
+<h3>AI & GenAI</h3>
+<p>OpenAI SDK, Hugging Face, CrewAI, LLMs, AI Agents, Prompt Engineering, RAG, NLP</p>
+</div>
+
+<div class="card glass">
+<h3>Automation</h3>
+<p>n8n, API Integration, Webhooks, Telegram Bots, WhatsApp Automation</p>
+</div>
+
+<div class="card glass">
+<h3>Tools & Platforms</h3>
+<p>Gradio, Ollama, Git, GitHub, Replit, Jupyter Notebook, VS Code</p>
+</div>
+
+<div class="card glass">
+<h3>Productivity Tools</h3>
+<p>Google Workspace</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="grid">
+
+<div class="card glass">
 <h3>Smart Campus Automation System</h3>
 <p>
-AI-powered campus automation platform using OpenAI, Gmail API,
-Google Calendar API and Airtable with n8n workflows for student
-support, scheduling and administrative automation.
+AI-powered campus automation platform using OpenAI,
+Gmail API, Google Calendar API and Airtable through n8n workflows.
 </p>
-<div class="tags">
-<span>OpenAI</span>
-<span>n8n</span>
-<span>Airtable</span>
-<span>Automation</span>
-</div>
 </div>
 
-<div class="project-card glass">
+<div class="card glass">
 <h3>AI Controlled OS Assistant (Jarvis)</h3>
 <p>
-Voice-controlled desktop assistant powered by local LLMs through Ollama.
-Supports application launching, file management, speech recognition and
-hands-free interaction.
+Voice-controlled desktop assistant using Ollama,
+Speech Recognition and local LLMs.
 </p>
-<div class="tags">
-<span>Python</span>
-<span>Ollama</span>
-<span>Voice AI</span>
-<span>LLM</span>
-</div>
 </div>
 
-<div class="project-card glass">
+<div class="card glass">
 <h3>Course Curriculum Designer</h3>
 <p>
-Multi-agent AI system developed using CrewAI and Gradio for automated
-curriculum generation with interactive customization and PDF export.
+Multi-agent AI curriculum generation system
+using CrewAI, Gradio and Python.
 </p>
-<div class="tags">
-<span>CrewAI</span>
-<span>Gradio</span>
-<span>AI Agents</span>
-</div>
 </div>
 
-<div class="project-card glass">
+<div class="card glass">
 <h3>Blood Bank Management System</h3>
 <p>
-Python-based management application supporting donor tracking,
-inventory management, validation, search and record management.
+Python application for donor tracking,
+inventory management and record handling.
 </p>
-<div class="tags">
-<span>Python</span>
-<span>Database</span>
-<span>Management System</span>
-</div>
 </div>
 
 </div>
 
 </div>
+
 </section>
 
 <section>
+
 <div class="container">
 
 <h2 class="section-title">Technology Stack</h2>
@@ -525,104 +540,31 @@ inventory management, validation, search and record management.
 <div class="tech-stack">
 
 <span>Python</span>
-<span>OpenAI SDK</span>
+<span>OpenAI</span>
 <span>CrewAI</span>
 <span>Hugging Face</span>
 <span>n8n</span>
 <span>Gradio</span>
 <span>Ollama</span>
-<span>Git</span>
 <span>GitHub</span>
 <span>RAG</span>
 <span>NLP</span>
-<span>Prompt Engineering</span>
 <span>AI Agents</span>
-<span>REST APIs</span>
-<span>JavaScript</span>
-<span>SQL</span>
-<span>HTML5</span>
-<span>CSS3</span>
+<span>Prompt Engineering</span>
 
 </div>
 
 </div>
+
 </section>
 
 <section>
-<div class="container">
 
-<h2 class="section-title">Education</h2>
-
-<div class="education-card glass">
-
-<table>
-
-<tr>
-<th>Qualification</th>
-<th>Institute</th>
-<th>Year</th>
-<th>Score</th>
-</tr>
-
-<tr>
-<td>B.Tech</td>
-<td>TR Abhilashi Memorial Institute of Engineering & Technology</td>
-<td>2026</td>
-<td>7.3 CGPA</td>
-</tr>
-
-<tr>
-<td>Diploma</td>
-<td>Govt. Polytechnic Sundernagar</td>
-<td>2023</td>
-<td>70%</td>
-</tr>
-
-</table>
-
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2 class="section-title">Certifications & Achievements</h2>
-
-<div class="cert-list">
-
-<div class="cert-item glass">
-Artificial Intelligence Internship – IIT Jammu
-</div>
-
-<div class="cert-item glass">
-IBM SkillsBuild – AI Fundamentals: Foundations for Understanding AI
-</div>
-
-<div class="cert-item glass">
-Hands-on experience with OpenAI, Claude and Hugging Face Models
-</div>
-
-<div class="cert-item glass">
-Built AI Agents and Multi-Agent Systems using CrewAI
-</div>
-
-<div class="cert-item glass">
-Developed Workflow Automation Solutions using n8n and API Integrations
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section>
 <div class="container">
 
 <h2 class="section-title">Contact</h2>
 
-<div class="contact glass" style="padding:40px;">
+<div class="contact glass">
 
 <p><strong>Phone:</strong> +91 8894885517</p>
 <br>
@@ -639,25 +581,82 @@ pankajthakur0927@gmail.com
 <p>
 <strong>LinkedIn:</strong>
 <a href="https://www.linkedin.com/in/pankaj-thakur-a90991362" target="_blank">
-linkedin.com/in/pankaj-thakur-a90991362
+View Profile
 </a>
 </p>
 
 <br>
 
 <p>
-<strong>Location:</strong>
+<strong>GitHub:</strong>
+<a href="https://github.com/PankajThakur0927" target="_blank">
+github.com/PankajThakur0927
+</a>
+</p>
+
+<br>
+
+<p>
 Sundernagar, Mandi, Himachal Pradesh, India
 </p>
 
 </div>
 
 </div>
+
 </section>
 
 <footer>
 © 2026 Pankaj Thakur | AI Engineer & Generative AI Developer
 </footer>
+
+<script>
+
+const roles = [
+"AI Engineer",
+"Generative AI Developer",
+"AI Agent Builder",
+"RAG Developer",
+"Automation Engineer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+const current = roles[roleIndex];
+const target = document.getElementById("typing");
+
+if(!deleting){
+
+target.textContent = current.substring(0,charIndex++);
+
+if(charIndex > current.length){
+deleting = true;
+setTimeout(typeEffect,1500);
+return;
+}
+
+}else{
+
+target.textContent = current.substring(0,charIndex--);
+
+if(charIndex < 0){
+deleting = false;
+roleIndex = (roleIndex + 1) % roles.length;
+}
+
+}
+
+setTimeout(typeEffect,deleting ? 50 : 100);
+
+}
+
+typeEffect();
+
+</script>
 
 </body>
 </html>
